@@ -2,6 +2,7 @@
 #include <cstring>
 
 MyLogger* MyLogger::pInstance_ = NULL;
+
 //template <typename msg_type>
 //msg_type MyLogger::m_log_str = NULL;  
 char* MyLogger::m_log_str = NULL;  
@@ -16,12 +17,13 @@ void MyLogger::log_msg (const char* writeThis){
 }
 
 //To fix
-//template <typename T>
-//void MyLogger::log_msg (T writeThis) {
+//template <typename msg_type>
+//void MyLogger::log_msg (msg_type writeThis) {
 //    fstream myfile; 
-//    myfile.open("D:/code2/amareshapp/logger.txt", ios_base::in | ios_base::app);
+//    myfile.open("C:/selfdev/logger.txt", ios_base::in | ios_base::app);
 //    myfile << writeThis <<endl;
 //}
+
 //template void MyLogger::log_msg (const char*);
 //template void MyLogger::log_msg (char*);
 //template void MyLogger::log_msg (int);
