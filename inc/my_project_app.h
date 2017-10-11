@@ -28,6 +28,7 @@
 #include <ostream>
 #include <iterator>
 
+#include "MyLogger.hpp"
 //#include "my_utilities.h"
 /*#include "programming.h"
 #include "Instrument.h"
