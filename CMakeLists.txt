@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 
 #set variables
 #$CMAKE_SOURCE_DIR:= 
-set( ENV{CMAKE_SOURCE_DIR} C:/selfdev/integration)
+set( ENV{CMAKE_SOURCE_DIR} D:/code/integration)
 # Project's name
 
 project(integrated)
@@ -14,7 +14,6 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # The following folder will be included
-include_directories("${PROJECT_SOURCE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}/inc")
 
 add_executable(integrated ${PROJECT_SOURCE_DIR}/source/main.cpp)
-add_executable(integrated ${PROJECT_SOURCE_DIR}/source/calc.cpp)
