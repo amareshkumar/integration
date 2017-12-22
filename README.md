@@ -24,11 +24,11 @@ Building
 You can build the Visual Studio solution using the following from the "build"
 directory:
 
-    devenv DEXSamples.sln /build Debug
+    devenv integrated.sln /build Debug
 
 or
 
-    devenv DEXSamples.sln /build RelWithDebInfo
+    devenv integrated.sln /build RelWithDebInfo
 
 The output will be in the build\Debug or build\RelWithDebInfo subdirectory.
 
