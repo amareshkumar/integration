@@ -30,22 +30,24 @@
 
 #include "MyLogger.hpp"
 //#include "my_utilities.h"
-/*#include "programming.h"
-#include "Instrument.h"
+#include "programming.h"
+//#include "Instrument.h"
 #include "tree.h"
-#include "IFelid.h"
+//#include "IFelid.h"
+#include "RefCount.h"
 #include "MyString.hpp"
 #include "MyLogger.hpp"
-#include "Tiger.hpp"
-#include "TestLogic.hpp"
+//#include "Tiger.hpp"
+//#include "TestLogic.hpp"
 #include "SmtPtr.h"
 #include "Shape.h"
 #include "Quad.h"
+#include "node.h"
 #include "Rectangle.h"
 #include "utility.h"
-#include "CodingTest.h"
+//#include "CodingTest.h"
 #include "Triangle.h"
-#include "intervel_map.h"*/
+//#include "intervel_map.h"*/
 
 using namespace std;
 
