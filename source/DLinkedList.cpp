@@ -5,8 +5,6 @@
  *      Author: amakumar
  */
 
-
-
 #include "DLinkedList.h"
 using namespace dlinkedlist;
 

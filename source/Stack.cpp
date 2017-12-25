@@ -89,7 +89,7 @@ namespace my_stack{
 }
 
 using namespace my_stack;
-
+/*
 int main(){
 	struct stack_node* first = NULL;
 
@@ -115,5 +115,5 @@ int main(){
 	//underflow check
 	pop(&first);
 }
-
+*/
 #endif //STACK_MAIN
