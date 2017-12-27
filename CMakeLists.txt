@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 #set variables
 #$CMAKE_SOURCE_DIR:= 
-set( ENV{CMAKE_SOURCE_DIR} D:/code/integration)
+#set( ENV{CMAKE_SOURCE_DIR} D:/code/integration)
 
 # Project's name
 project(integrated)
@@ -22,4 +22,8 @@ include_directories("${PROJECT_SOURCE_DIR}/inc")
 # get all *.cpp files recursively
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/*.cpp ${PROJECT_SOURCE_DIR}/*.hpp ${PROJECT_SOURCE_DIR}/*.h)
 message("Files to compile: " ${SRC})
-add_executable(integrated ${SRC_FILES})
+#disable if binary isn't required as output
+#add_executable(integrated ${SRC_FILES})
+
+#to make cmake generate a static library
+add_library (integrated-static-lib STATIC ${SRC_FILES})
