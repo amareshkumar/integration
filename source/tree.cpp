@@ -6,7 +6,6 @@ struct tnode {
 	int data;
 	struct tnode* left;
 	struct tnode* right;
-
 };
 
 
