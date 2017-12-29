@@ -29,5 +29,9 @@ void* watch_balance (void* null);
 void* update_balance_cv (void* null);
 void thread_func_cond();
 
+//another set of threads function
+//added on Dec 29th 2017
+void* print_number(void *arg);
+
 #endif	/* MYTHREAD_HPP */
 

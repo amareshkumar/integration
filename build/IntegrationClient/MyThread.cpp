@@ -128,3 +128,49 @@ void thread_func_cond(){
         pthread_join (cv_threads[i], NULL);
     }
 }
+
+
+//write function so that each thread prints different area of input string of int
+void* print_number(void *arg) {
+	int *value = (int*)arg;
+
+	for (int i = 0; i < 20; i++) {
+		if (value[i] == 0) {
+			cout << "Thread with id " << " is printing " << value[i] << endl;
+		}
+		else {
+			continue;
+		}
+	}
+	pthread_exit(NULL);
+	return NULL;
+}
+
+
+/*
+To do
+// this is to be done may be using boost thread
+//	Implement thread utility so that given a string like 0012555428779,
+// one thread print 0 other only even and another only odd number
+
+// Copy and paste in client program/main program
+//common pthread code snippet
+
+cout << "Threading practises..." << endl;
+//intialize memory for an array of integers
+int *array = new int(20);
+
+for (int i = 0; i < 20; i++) {
+array[i] = i;
+}
+
+//create a threads
+pthread_t th1;
+//call a function
+pthread_create(&th1, NULL, print_number, (void*)array);
+
+//allow thread(s) to join
+pthread_join(th1, NULL);
+
+delete[] array;
+*/
