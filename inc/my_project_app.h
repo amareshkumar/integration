@@ -1,24 +1,6 @@
 #ifndef MY_PROJECT_APP_H
 #define MY_PROJECT_APP_H
 
-//include own headers in order of as and when they are/were written
-#include "MyLogger.hpp"
-#include "programming.h"
-#include "tree.h"
-#include "RefCount.h"
-#include "MyString.hpp"
-#include "MyLogger.hpp"
-#include "SmtPtr.h"
-#include "Shape.h"
-#include "Quad.h"
-#include "node.h"
-#include "Rectangle.h"
-#include "utility.h"
-#include "Triangle.h"
-#include "MyGC.hpp"
-#include "linked_list.h"
-#include "KumarAlgoImpl.h"
-
 //include standard headers
 #include <unordered_map>
 #include <sstream>
@@ -44,6 +26,24 @@
 #include <algorithm>
 #include <ostream>
 #include <iterator>
+
+//include own headers in order of as and when they are/were written
+#include "MyLogger.hpp"
+#include "programming.h"
+#include "tree.h"
+#include "RefCount.h"
+#include "MyString.hpp"
+#include "MyLogger.hpp"
+#include "SmtPtr.h"
+#include "Shape.h"
+#include "Quad.h"
+#include "node.h"
+#include "Rectangle.h"
+#include "utility.h"
+#include "Triangle.h"
+#include "MyGC.hpp"
+#include "linked_list.h"
+#include "KumarAlgoImpl.h"
 
 using namespace std;
 

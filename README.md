@@ -37,3 +37,15 @@ You can build on macOS/Linux using make:
     make
 
 The output will be the "build" subdirectory.
+
+IntegrationClient (Linux)
+=======================
+Please make sure the .a file is generated before following steps
+
+cd client
+mkdir build && cd build 
+cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+make
+
+cd bin
+./integrationClient
