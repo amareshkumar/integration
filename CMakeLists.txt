@@ -5,10 +5,12 @@ cmake_minimum_required(VERSION 2.8)
 set(CMAKE_CXX_STANDARD 11)  
 
 #set variables
-#$CMAKE_SOURCE_DIR:= 
-#set( ENV{CMAKE_SOURCE_DIR} D:/code/integration)
+if (UNIX)
+set( ENV{CMAKE_SOURCE_DIR} /home/amaresh/code/integration )    
+else() 
+set(ENV{CMAKE_SOURCE_DIR} D:/code/integration)
+endif (UNIX)
 
-# Project's name
 project(integrated)
 
 # Set the output folder where your program will be created

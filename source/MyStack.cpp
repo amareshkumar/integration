@@ -54,7 +54,7 @@ int my_stack::stack::pop(stack_node** first){
 int my_stack::stack::peek(struct stack_node* root)
 {
 	if (is_empty(root))
-		return INT_MIN;
+		return -1;
 	return root->data;
 
 	printf("Top element is %d\n", peek(root));
