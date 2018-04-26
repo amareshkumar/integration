@@ -7,6 +7,7 @@
 #include <stack>
 #include <queue>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ class KumarAlgoImpl {
 public:
 	// check if a string is palindrome using a queue and stack
 	bool isPalindrome(const std::string str);
+	vector<vector<int>> fourSum(vector<int>& nums, int target);
 
 private:
     stack<char> m_stack;

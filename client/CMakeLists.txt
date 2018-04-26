@@ -18,13 +18,6 @@ set(CMAKE_BINARY_DIR ${CMAKE_BINARY_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
-# The following folder will be included
-#include_directories("${PROJECT_SOURCE_DIR}/inc")
-
-# get all *.cpp files recursively
-#file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/*.cpp ${PROJECT_SOURCE_DIR}/*.hpp ${PROJECT_SOURCE_DIR}/*.h)
-#message("Files to compile: " ${SRC})
-
 #add_executable(integrated ${SRC_FILES})
 add_executable(integrationClient integrationClient.cpp)
 target_link_libraries(integrationClient ${PROJECT_SOURCE_DIR}/../build/bin/libintegrated-static-lib.a)
