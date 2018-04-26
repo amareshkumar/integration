@@ -1,40 +1,86 @@
 /*
- * utility.cpp
+ *  utility.cpp
  *
+ *  Author: Amaresh Kumar
  *  Created on: 16/01/2016
- *      Author: amare_000
+ *  Modified on: April 26th 2018
  */
 
 #include "utility.h"
+#include "KumarAlgoImpl.h"
 
+//static function implementation
 void utility::start (){
-	std::cout << "=============================" << endl;
-	std::cout << "Welcome to Amaresh Project" << endl;
-	std::cout << "What you want to do" << endl;
+	std::cout << "\n################=============================" << endl;
+	std::cout << "Welcome to Amaresh's Project \"Integration\"" << endl;
+	std::cout << "=============================################\n" << endl;
+	std::cout << "What do you want to do? Please select an option: " << endl;
 	std::cout <<"\n\
-			1. social_network_app\n\
-			2. programming questions\n\
-			3. Contact me\n\
-			4. Polymorphism\n\
-			5. Mutitheading\n\
-			6. gc\n\
-			7. social\n\
-			8. overloading\n\
-			9. Oops\n\
-			10.Boost\n\
-			11.Cpp11\n\
-			12.data structure\n\
-			99.Exit" << endl;
+			1.	social_network_app\n\
+			2. 	programming questions\n\
+			3. 	Contact me\n\
+			4. 	Polymorphism\n\
+			5. 	Mutitheading\n\
+			6. 	gc\n\
+			7. 	social\n\
+			8. 	overloading\n\
+			9. 	Oops\n\
+			10.	Boost\n\
+			11.	Cpp11\n\
+			12.	data structure\n\
+			13.	Algo\n\
+			99.	Exit" << endl;
+
 	cout << "Please input your choice: " ;
 	int choice;
-
 	cin >> choice;
 
 	switch (choice){
-		case SocailNetwork: {
-			cout << "Not developed yet\n";
+		case Algo: {
+			std::cout << "\n\
+						Algo section: enter your choice: \n\
+						101. Check if a string is a palindrome \n\
+						102. find quadruples with sum \"target\" among an given array of size nums \n\
+						103. <To be added> \n " << endl;
+
+			int algo_choice = 0;
+			KumarAlgoImpl kumaralgoimpl; //object for Algo component
+			cin >> algo_choice;
+
+			switch (algo_choice){
+				case 101:{
+					string input_str;
+					std::cout << "Enter string to check if it is palindrome: ";
+					getline (cin, input_str);
+
+					if ( kumaralgoimpl.isPalindrome (input_str)) {
+						cout << "the input string is palindrome" << endl;
+					} else {
+						cout << "the input string isn't palindrome" << endl;
+					}
+
+					break;
+				}
+
+				case 102: {
+					vector <int> array {1, 0, -1, 0, -2, 2};
+					int target = 0;
+					vector<vector<int>> result;
+
+					result = kumaralgoimpl.fourSum (array, target);
+					//see the result
+					for (auto ele : result) { for (auto el: ele) { cout << el << " "; } cout << endl; }
+
+					break;
+				}
+
+				default: {
+					cout << "Sorry, this choice isn't there implemented" << endl;
+				}
+			}
 			break;
 		}
+
 		case ProgrammingQuestions: {
 			programming_questions prog_q;
 			//Display the current programs listings (read file)
@@ -81,6 +127,7 @@ void utility::start (){
 				}
 			break;
 		}
+
 		case datastructures: {
 			cout << "\n\
 			 111. Linkedlist\n\
@@ -116,6 +163,7 @@ void utility::start (){
 			cout << "Not developed yet\n";
 			break;
 		}
+
 		case Cpp11: {
 				cout << "==================================================\n";
 
@@ -126,12 +174,21 @@ void utility::start (){
 					myIntVect.push_back(i);
 				}
 				std::for_each ( begin(myIntVect), end(myIntVect), [&](int elem ) { cout << elem++ << " "; } );
+
+				break;
 		}
+
 		case GetMeOutOfHere: {
 			break;
 		}
+
+		case SocailNetwork: {
+			cout << "Not developed yet\n";
+			break;
+		}
+
 		default: {
 			cout << "Please enter a valid input! " << endl;
 		}
 	} //end of switch
-} //end of start
+} //end of utitlity::start()

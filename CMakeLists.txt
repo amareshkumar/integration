@@ -24,8 +24,6 @@ include_directories("${PROJECT_SOURCE_DIR}/inc")
 # get all *.cpp files recursively
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/*.cpp ${PROJECT_SOURCE_DIR}/*.hpp ${PROJECT_SOURCE_DIR}/*.h)
 message("Files to compile: " ${SRC})
-#disable if binary isn't required as output
-#add_executable(integrated ${SRC_FILES})
 
 #to make cmake generate a static library
 add_library (integrated-static-lib STATIC ${SRC_FILES})

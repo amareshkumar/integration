@@ -5,8 +5,8 @@
  *      Author: amare_000
  */
 
-#ifndef INC_UTILITY_H_
-#define INC_UTILITY_H_
+#ifndef UTILITY_H_
+#define UTILITY_H_
 
 #include "my_project_app.h"
 
@@ -22,13 +22,14 @@ enum EUserInput {
 	Boost					= 10,
 	Cpp11					= 11,
 	datastructures			= 12,
+	Algo					= 13,
+	String					= 14,
 	GetMeOutOfHere 			= 99
 };
 
 class utility {
-
 public:
-	void start ();
+	static void start ();
 };
 
-#endif /* INC_UTILITY_H_ */
+#endif /* UTILITY_H_ */
