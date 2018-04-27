@@ -25,16 +25,16 @@ public:
 	~tree();
 
 	//create a tree: complete tree
-	void create_btree (int arr[], int len);
+	void create_btree (btnode* root, int arr[], int len);
 
 	//in-order traversal
 	void display_btree_i (btnode *root);
 	void add_a_btnode (btnode* btnode, int data);
 
-	inline btnode* get_root_btnode () { return m_root_btnode; }
+    btnode* get_root_btnode () { return m_root_btnode; }
 
 private:
-	btnode* m_root_btnode;
+	static btnode* m_root_btnode;
 };
 
 }

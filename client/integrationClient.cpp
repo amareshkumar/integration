@@ -16,10 +16,16 @@ int main () {
 	using namespace btree;
 	//create an instance of btree::tree;
 	btree::tree* tree = new btree::tree();
-	tree->create_btree (arr, len);
+	btree::btnode* root = tree->get_root_btnode();
 
+	//create tree
+	tree->create_btree (root, arr, len);
+
+	//btree::btnode* root_modified = tree->get_root_btnode();
 	//now display tree
-	tree->display_btree_i (tree->get_root_btnode());
+	tree->display_btree_i (root);
+
+	delete tree;
 
 	return 0;
 }
