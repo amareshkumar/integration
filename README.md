@@ -1,16 +1,17 @@
 Project: integration
-This is a sole purpose project for practices for some C++ concepts and self-programming practices.
+This is a sole purpose project for self-practices for some C++ concepts and algo/ds implementations.
 
 Generating build script
 =======================
 
 Create a subdirectory called "build" and change to it.
+	mkdir build && cd build
 
 On Windows create a Visual Studio solution by executing:
     
 	cmake -G "Visual Studio 14 2015 Win64" ..
 
-On macOS/Linux create a makefile by executing:
+On Linux/MacOS create a makefile by executing:
 
     cmake -DCMAKE_BUILD_TYPE=Debug ..
 
@@ -23,9 +24,14 @@ Building
 
 You can build the Visual Studio solution using the following from the "build"
 directory:
-
+	
+for library:
+	
     devenv integrated.sln /build Debug
+	
+client application:
 
+	devenv integrationClient.sln /build Debug
 or
 
     devenv integrated.sln /build RelWithDebInfo
@@ -36,16 +42,17 @@ You can build on macOS/Linux using make:
 
     make
 
-The output will be the "build" subdirectory.
+The output will be in the "bin" subdirectory.
 
 IntegrationClient (Linux)
 =======================
-Please make sure the .a file is generated before following steps
+Please make sure the .a file is generated before you generate build files for client. Steps:
 
-cd client
-mkdir build && cd build 
-cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
-make
+to build: cd client
 
-cd bin
+	mkdir build && cd build 
+	cmake -DCMAKE_BUILD_TYPE=Debug ..
+	make
+
+to run: cd bin
 ./integrationClient

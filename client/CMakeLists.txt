@@ -1,3 +1,8 @@
+# This is personal practises and implementation
+# Create by: Amaresh Kumar
+# Last modified on April 27th 2018
+# 
+
 # Specify the minimum version for CMake
 cmake_minimum_required(VERSION 2.8)
 
@@ -20,4 +25,8 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 #add_executable(integrated ${SRC_FILES})
 add_executable(integrationClient integrationClient.cpp)
+if (UNIX)
 target_link_libraries(integrationClient ${PROJECT_SOURCE_DIR}/../build/bin/libintegrated-static-lib.a)
+else()
+target_link_libraries(integrationClient ${PROJECT_SOURCE_DIR}/../build/bin/Debug/integrated-static-lib.lib)
+endif (UNIX)
