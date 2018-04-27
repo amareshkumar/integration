@@ -4,15 +4,16 @@
 using namespace std;
 namespace btree{
 
-tree::tree (): m_root_btnode (nullptr) {}
+btnode* tree::m_root_btnode = nullptr;
+	
+tree::tree () {}
 
 tree::~tree() {
 	m_root_btnode = nullptr;
 }
 
 //creates a complete tree
-void tree::create_btree (int arr[], int len) {
-	btnode* root = get_root_btnode ();
+void tree::create_btree (btnode* root, int arr[], int len) {
 
 	for (int i = 0; i < len; i++) {
 		add_a_btnode (root, arr[i]);
@@ -22,13 +23,12 @@ void tree::create_btree (int arr[], int len) {
 
 void tree::add_a_btnode (btnode* root, int data) {
 	///check if tree is empty
-	if (!root) {
+	btnode *current = root;
+	if (!current) {
 		btnode* newbtnode = new btnode(data);
 		root = newbtnode;
 		return;
 	}
-
-	btnode* current = root;
 
 	if (current->get_left_btnode() != nullptr) {
 		//can we add it as right child of current btnode?
@@ -51,8 +51,8 @@ void tree::add_a_btnode (btnode* root, int data) {
 void tree::display_btree_i (btnode* root) {
 	btnode* current = root;
 	if (current == nullptr){
-		return;
 		std::cout << "No elem in tree!" << std::endl;
+		return;
 	}
 
 	display_btree_i (current->get_left_btnode());
