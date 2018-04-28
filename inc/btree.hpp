@@ -1,16 +1,12 @@
 #ifndef BTREE_H_
 #define BTREE_H_
 
-//btnode class
-
 namespace btree {
+
+//btnode class
 class btnode {
 public:
 	btnode(int data): m_info(data), m_left(nullptr), m_right (nullptr) {}
-
-	btnode* get_left_btnode ()  { return m_left; }
-	btnode* get_right_btnode () { return m_right; }
-	int get_data () { return m_info;}
 public:
 	int m_info;
 	btnode* m_left;
@@ -22,19 +18,17 @@ class tree {
 public:
 	//construct a complete binary tree
 	tree ();
+	tree(int arr[], int len);
 	~tree();
 
-	//create a tree: complete tree
-	void create_btree (btnode* root, int arr[], int len);
-
 	//in-order traversal
-	void display_btree_i (btnode *root);
-	void add_a_btnode (btnode* btnode, int data);
-
-    btnode* get_root_btnode () { return m_root_btnode; }
+	void display_btree_in();
+	void display_btree_i(btnode* &root);
+	void add_a_btnode (btnode* &btnode, int data);
 
 private:
 	static btnode* m_root_btnode;
+	static btnode* m_root;
 };
 
 }

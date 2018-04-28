@@ -13,19 +13,12 @@ int main () {
 	int arr [] = {15, 10, 100, 5, 13, 90, 80, 50, 10, 5, 3};
     int len = sizeof(arr)/sizeof(*arr);
 
-	using namespace btree;
 	//create an instance of btree::tree;
-	btree::tree* tree = new btree::tree();
-	btree::btnode* root = tree->get_root_btnode();
+	btree::tree tree (arr, len);
 
-	//create tree
-	tree->create_btree (root, arr, len);
-
-	//btree::btnode* root_modified = tree->get_root_btnode();
-	//now display tree
-	tree->display_btree_i (root);
-
-	delete tree;
+	//Display tree
+	std::cout << std::endl;
+	tree.display_btree_in();
 
 	return 0;
 }
