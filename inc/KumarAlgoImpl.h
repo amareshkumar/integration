@@ -8,6 +8,7 @@
 #include <queue>
 #include <string>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -17,7 +18,7 @@ public:
 	// check if a string is palindrome using a queue and stack
 	bool isPalindrome(const std::string str);
 	vector<vector<int>> fourSum(vector<int>& nums, int target);
-
+	vector<int> prime_sum (int num);
 private:
     stack<char> m_stack;
     queue<char> m_queue;

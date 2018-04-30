@@ -25,7 +25,9 @@ public:
 	void display_btree_in();
 	void display_btree_i(btnode* &root);
 	void add_a_btnode (btnode* &btnode, int data);
-
+	int height (btnode* root);
+	int height();
+	int tree_hight_diff (btnode* left, btnode* right);//to get difference of left and right subtree
 private:
 	static btnode* m_root_btnode;
 	static btnode* m_root;

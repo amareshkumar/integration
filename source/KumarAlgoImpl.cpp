@@ -51,3 +51,57 @@ vector<vector<int>> KumarAlgoImpl::fourSum(vector<int>& nums, int target) {
 	return result_Vect;
 }
 
+bool check_prime (int n) {
+	if (n == 2) return true;
+
+	//no need to take care less than 2
+	for (int i = 2; i*i <= n; i++) {
+		if (n % i ==0) {
+			return false;
+		}
+	}
+}
+
+vector<int> return_prime_sum (vector<int> prime_v, int sum) {
+	vector <int> result(2);
+	static int first = 0;
+	static int second = 0;
+
+	for (int i = 0; i < prime_v.size(); i++){
+		first = prime_v[i];
+		second = 0;
+		bool found = false;
+		for (int j = i+1; j < prime_v.size(); j++){
+			if (prime_v[j] == (sum-first)) {
+
+//				if ( first <= second && found_f < found_s) {
+//							first = second;
+//							found_f = found_s;
+//				}
+
+				second = prime_v[j];//got first pair
+				found = true;
+				break;
+			}
+		} //inner loop
+		if (found) break;
+	}
+
+	result[0] = first;
+	result[1] = second;
+
+	return result;
+}
+
+vector<int> KumarAlgoImpl::prime_sum (int num) {
+
+	vector<int> prime_list;
+
+	for (int i=2; i < num; i++){
+		if (check_prime(i)) {
+			prime_list.push_back(i);
+		}
+	}
+
+	return return_prime_sum (prime_list, num);
+}
