@@ -189,3 +189,23 @@ bool MyString::check_palindrome_sent(string sent){
 	}
 	return flag;
 }
+
+/*Given a string s consists of upper/lower-case alphabets and empty space characters ' ',
+ * return the length of last word in the string.
+ * If the last word does not exist, return 0.
+ * Note: A word is defined as a character sequence consists of non-space characters only.*/
+int MyString::lengthOfLastWord(const string &A) {
+
+	const char *s = A.c_str();
+	int len = 0;
+	while (*s) {
+		if (*s != ' ') {
+			len++;
+			s++;
+			continue;
+		}
+		s++;
+		if (*s && *s != ' ') len = 0;
+	}
+	return len;
+}

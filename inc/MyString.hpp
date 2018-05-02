@@ -33,6 +33,8 @@ public:
 
 	const char& operator[] (const int index) const;
 	char& operator[] (const int index);
+
+	int lengthOfLastWord(const string &A);
 private:
     char* m_str; 
     static const char* desc;

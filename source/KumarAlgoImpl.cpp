@@ -20,7 +20,6 @@ bool KumarAlgoImpl::isPalindrome(const std::string str) {
 	return is_palindrome;
 }
 
-
 /*
  * Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target?
  * Find all unique quadruplets in the array which gives the sum of target.
@@ -60,9 +59,10 @@ bool check_prime (int n) {
 			return false;
 		}
 	}
+	return true;
 }
 
-vector<int> return_prime_sum (vector<int> prime_v, int sum) {
+vector<int> return_prime_sum (vector<int> &prime_v, int sum) {
 	vector <int> result(2);
 	static int first = 0;
 	static int second = 0;
@@ -73,12 +73,6 @@ vector<int> return_prime_sum (vector<int> prime_v, int sum) {
 		bool found = false;
 		for (int j = i+1; j < prime_v.size(); j++){
 			if (prime_v[j] == (sum-first)) {
-
-//				if ( first <= second && found_f < found_s) {
-//							first = second;
-//							found_f = found_s;
-//				}
-
 				second = prime_v[j];//got first pair
 				found = true;
 				break;
