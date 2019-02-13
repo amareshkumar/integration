@@ -6,6 +6,7 @@ double Dp::fact (int n){
 	//So to run on C++11 or MVSC, following could be done
 	std::vector<double> f;
 	f.resize(n+1);
+	//double f[n+1];
 
 	int i = 0;
 	f[0] = 1;
@@ -18,10 +19,11 @@ double Dp::fact (int n){
 }
 
 double Dp::fibonacci (int n){
-	//double f[n+1]; //same reasoning as above
 
+	//double f[n+1]; //same reasoning as above
 	std::vector<double> f;
 	f.resize(n + 1);
+
 	int i = 0;
 	f[0] = 0;
 	f[1] = 1;
