@@ -52,6 +52,7 @@ int main () {
 	//Singleton patterns and class practises
 	MyLogger& logger = MyLogger::get_instance();
 	logger.log_msg("Hello Singleton");
+	logger.log_msg(2);
 
 	return 0;
 }
