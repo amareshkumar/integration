@@ -3,6 +3,7 @@
  * Author: amakumar
  *
  * Created on July 28, 2015, 3:01 PM
+ * Modified on March 1st, 2019
  * To do: make the mylogger class templatized to log for all data types. 
  */
 
@@ -11,7 +12,6 @@
 
 #include "my_project_app.h"
 
-//template <typename msg_type>
 class MyLogger {
 private:
 	MyLogger() {}
@@ -20,16 +20,22 @@ private:
 	~MyLogger() { my_log_file.close(); }
 	static MyLogger* pInstance_;
 public:
+	
 	static MyLogger& get_instance() {
 		if (!pInstance_)
 			pInstance_ = new MyLogger;
 		return *pInstance_;
 	}
 
-	void log_msg(const char* log_str);
+	template <typename T>
+	void log_msg(T writeThis){
+		fstream myfile;
+		myfile.open("D://logger.txt", ios_base::in | ios_base::app);
+		myfile << writeThis << endl;
+	}
+
 public:
 	static std::fstream my_log_file;
-	static char* m_log_str;
 };
 
 #endif	/* MYLOGGER_HPP */
