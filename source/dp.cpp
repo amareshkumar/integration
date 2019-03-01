@@ -33,3 +33,14 @@ double Dp::fibonacci (int n){
 	}
 	return f[n];
 }
+
+/*
+	int choice = 0;
+	std::cout <<"####DP####\n\nenter number: " ;
+	Dp dp;
+	cin >> choice;
+	std::cout << "fact using dp: " << dp.fact(choice) << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "fibonacci for number " << choice << " entered [using DP]: " << dp.fibonacci(choice) << std::endl;
+	*/

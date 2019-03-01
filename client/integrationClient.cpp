@@ -42,20 +42,16 @@ int main () {
 //	MyString mystring;
 //	std::cout << "lenght of last word: " << mystring.lengthOfLastWord("a weirg question about white space");
 //	std::cout << std::endl;
-
-	/*
-	int choice = 0;
-	std::cout <<"####DP####\n\nenter number: " ;
-	Dp dp;
-	cin >> choice;
-	std::cout << "fact using dp: " << dp.fact(choice) << std::endl;
-	std::cout << std::endl;
-
-	std::cout << "fibonacci for number " << choice << " entered [using DP]: " << dp.fibonacci(choice) << std::endl;
-	*/
 	
-	threading();
+	//Threading practises
+	//threading();
+
+	//function pointers
+	//fn_pointer();
+	
+	//Singleton patterns and class practises
+	MyLogger& logger = MyLogger::get_instance();
+	logger.log_msg("Hello Singleton");
 
 	return 0;
 }
-
