@@ -8,6 +8,7 @@
 #include "d:/code/integration/inc/dp.hpp"
 #endif
 
+
 int main () {
 
     //commented for direct testing
@@ -42,6 +43,7 @@ int main () {
 //	std::cout << "lenght of last word: " << mystring.lengthOfLastWord("a weirg question about white space");
 //	std::cout << std::endl;
 
+	/*
 	int choice = 0;
 	std::cout <<"####DP####\n\nenter number: " ;
 	Dp dp;
@@ -50,6 +52,10 @@ int main () {
 	std::cout << std::endl;
 
 	std::cout << "fibonacci for number " << choice << " entered [using DP]: " << dp.fibonacci(choice) << std::endl;
+	*/
+	
+	threading();
+
 	return 0;
 }
 
