@@ -50,9 +50,21 @@ int main () {
 	//fn_pointer();
 	
 	//Singleton patterns and class practises
-	MyLogger& logger = MyLogger::get_instance();
+	/*MyLogger& logger = MyLogger::get_instance();
 	logger.log_msg("Hello Singleton");
-	logger.log_msg(2);
+	logger.log_msg(2);*/
+
+	//Templates and Metaprogramming
+	Derived <int> derived;
+	derived.display();
+	cout << "cube from Derived::cube_int(): " << derived.cube_int(5) << endl;
+
+	Templatized <Int_class, Float_class> templatized;
+	Int_class* intclass = new Int_class(); 
+	Float_class* floatclass = new Float_class(); 
+
+	cout << "is int class object size is bigger: " 
+		<< templatized.is_bigger_object_size(*intclass, *floatclass) << endl;
 
 	return 0;
 }
