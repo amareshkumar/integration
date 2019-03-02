@@ -50,6 +50,7 @@
 #include "dp.hpp"
 #include "Threads.hpp"
 #include "fp.hpp"
+#include "Templates.hpp"
 
 using namespace std;
 
