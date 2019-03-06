@@ -3,13 +3,11 @@
 using namespace std; 
 
 void Queue::enqueue (int item) {
-	
-	if (rear == SIZE-1) {
+	if (rear == SIZE) {
 		cout << "Queue is full " << endl;
 		return;
 	}
-	//rear = rear+1;
-	arr[++rear] = item;
+	arr[rear++] = item;
 }
 
 int Queue::dequeue (){
@@ -26,7 +24,7 @@ void Queue::print () {
 		return;
 	}
 	
-	for (int i=0; i <= rear; i++) {
+	for (int i=front; i < rear; i++) {
 		cout << arr[i] << " ";
 	}
 	cout << endl;

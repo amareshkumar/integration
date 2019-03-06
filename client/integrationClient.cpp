@@ -78,12 +78,18 @@ int main () {
 	queue.enqueue(9);
 	queue.print();
 
-	cout << "after deueue: " << endl;
-	cout << "front element " << queue.dequeue() << endl;
-	cout << "queue " << endl;
-	cout << queue.dequeue();
+	cout << "after 1st deueue: " << queue.dequeue() << " Queue is: ";
+	queue.print();
+	cout << "after 2nd element: " << queue.dequeue() << " Queue is: ";
+	queue.print();
+	cout << "after 3rdd element: " << queue.dequeue() << " Queue is: ";
 	queue.print();
 
+	cout << "again 2 more enqueues: " << endl;
+	queue.enqueue(13);
+	queue.enqueue(15);
+	cout << "Queue now is: ";
+	queue.print();
 
 	return 0;
 }
