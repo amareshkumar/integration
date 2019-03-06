@@ -51,6 +51,7 @@
 #include "Threads.hpp"
 #include "fp.hpp"
 #include "Templates.hpp"
+#include "Queue_Array.hpp"
 
 using namespace std;
 

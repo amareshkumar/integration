@@ -55,6 +55,7 @@ int main () {
 	logger.log_msg(2);*/
 
 	//Templates and Metaprogramming
+	/*
 	Derived <int> derived;
 	derived.display();
 	cout << "cube from Derived::cube_int(): " << derived.cube_int(5) << endl;
@@ -65,6 +66,24 @@ int main () {
 
 	cout << "is int class object size is bigger: " 
 		<< templatized.is_bigger_object_size(*intclass, *floatclass) << endl;
+	*/
+
+	//Queue impl using array
+	Queue queue;
+
+	queue.enqueue(1);
+	queue.enqueue(3);
+	queue.enqueue(5);
+	queue.enqueue(7);
+	queue.enqueue(9);
+	queue.print();
+
+	cout << "after deueue: " << endl;
+	cout << "front element " << queue.dequeue() << endl;
+	cout << "queue " << endl;
+	cout << queue.dequeue();
+	queue.print();
+
 
 	return 0;
 }
