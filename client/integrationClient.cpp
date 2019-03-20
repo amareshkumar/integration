@@ -1,4 +1,4 @@
-#include "integrationClient.h"
+﻿#include "integrationClient.h"
 
 #ifdef __unix__
 #include "/home/amaresh/code/integration/inc/btree.hpp"
@@ -53,7 +53,6 @@ int main () {
 	/*MyLogger& logger = MyLogger::get_instance();
 	logger.log_msg("Hello Singleton");
 	logger.log_msg(2);*/
-
 	//Templates and Metaprogramming
 	/*
 	Derived <int> derived;
@@ -67,9 +66,8 @@ int main () {
 	cout << "is int class object size is bigger: " 
 		<< templatized.is_bigger_object_size(*intclass, *floatclass) << endl;
 	*/
-
 	//Queue impl using array
-	Queue queue;
+	/*Queue queue;
 
 	queue.enqueue(1);
 	queue.enqueue(3);
@@ -89,7 +87,11 @@ int main () {
 	queue.enqueue(13);
 	queue.enqueue(15);
 	cout << "Queue now is: ";
-	queue.print();
-
-	return 0;
+	queue.print();*/
+	
+	cout << "CI Practises" << endl;
 }
+
+
+
+
