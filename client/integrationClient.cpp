@@ -89,7 +89,18 @@ int main () {
 	cout << "Queue now is: ";
 	queue.print();*/
 	
-	cout << "CI Practises" << endl;
+	//cout << "CI Practises" << endl;
+
+
+	//Driver for observer design pattern
+	Subject subject; 
+	OldConcreteObserver old_observer(&subject, 100);
+	OldConcreteObserver old_observer2(&subject, 200);
+
+	YoungConcreteObserver young_observer1(&subject, 50);
+	YoungConcreteObserver young_observer2(&subject, 150);
+
+	subject.setScored(true);
 }
 
 

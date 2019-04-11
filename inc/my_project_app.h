@@ -52,6 +52,7 @@
 #include "fp.hpp"
 #include "Templates.hpp"
 #include "Queue_Array.hpp"
+#include "Observer.hpp"
 
 using namespace std;
 
