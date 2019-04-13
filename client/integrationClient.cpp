@@ -93,7 +93,7 @@ int main () {
 
 
 	//Driver for observer design pattern
-	Subject subject; 
+	/*Subject subject; 
 	OldConcreteObserver old_observer(&subject, 100);
 	OldConcreteObserver old_observer2(&subject, 200);
 
@@ -101,6 +101,38 @@ int main () {
 	YoungConcreteObserver young_observer2(&subject, 150);
 
 	subject.setScored(true);
+	*/
+
+	//Driver for Abstract design pattern
+	//Mobile companies facotry patters
+	Abs_MobileFactory *abs_mobile_factory;
+
+	//generic mobile product abstract
+	Smartphone *smartphone;
+
+	//acutal concerete products
+	//Blackberry is needed from customer
+	abs_mobile_factory = new BlackBerryFactory;
+
+	//BlackBerryFactory creates a product called Blackberry
+	smartphone = abs_mobile_factory->createSmartphone();
+	
+	//use the product : blackberry
+	smartphone->which_smart_phone();
+
+	//Now client needs an Iphone
+	abs_mobile_factory = new IphoneFactory;
+
+	//IphoneFactory creates a product "Iphone" for use
+	smartphone = abs_mobile_factory->createSmartphone();
+
+	//use iphone
+	smartphone->which_smart_phone();
+
+
+	abs_mobile_factory = new AndroidFactory;
+	smartphone = abs_mobile_factory->createSmartphone();
+	smartphone->which_smart_phone();
 }
 
 

@@ -53,6 +53,7 @@
 #include "Templates.hpp"
 #include "Queue_Array.hpp"
 #include "Observer.hpp"
+#include "AbstractFactory.hpp"
 
 using namespace std;
 
