@@ -14,7 +14,7 @@ int main () {
     //commented for direct testing
 	//utility::start ();
 
-//	int arr [] = {15, 10, 100, 5, 13, 90, 80, 50, 10, 5, 3};
+	//	int arr [] = {15, 10, 100, 5, 13, 90, 80, 50, 10, 5, 3};
 //    int len = sizeof(arr)/sizeof(*arr);
 //
 //	//create an instance of btree::tree;
@@ -91,7 +91,6 @@ int main () {
 	
 	//cout << "CI Practises" << endl;
 
-
 	//Driver for observer design pattern
 	/*Subject subject; 
 	OldConcreteObserver old_observer(&subject, 100);
@@ -105,7 +104,7 @@ int main () {
 
 	//Driver for Abstract design pattern
 	//Mobile companies facotry patters
-	Abs_MobileFactory *abs_mobile_factory;
+	/*Abs_MobileFactory *abs_mobile_factory;
 
 	//generic mobile product abstract
 	Smartphone *smartphone;
@@ -132,7 +131,17 @@ int main () {
 
 	abs_mobile_factory = new AndroidFactory;
 	smartphone = abs_mobile_factory->createSmartphone();
-	smartphone->which_smart_phone();
+	smartphone->which_smart_phone();*/
+
+	
+	//Driver code for Decorator design pattern
+	cout << "Decorator design pattern" << endl;
+
+	IGirl* girl = new GirlWithExpensiveDress(new GirlWithHighHills (new GirlDrivingHarleyBike(new GirlWithNecklace(new GirlMakeUp(new Girl())))));
+	
+	girl->girl_type();
+
+	delete girl;
 }
 
 
