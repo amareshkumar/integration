@@ -54,6 +54,7 @@
 #include "Queue_Array.hpp"
 #include "Observer.hpp"
 #include "AbstractFactory.hpp"
+#include "Decorator.hpp"
 
 using namespace std;
 
