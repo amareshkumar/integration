@@ -1,13 +1,5 @@
 ﻿#include "integrationClient.h"
 
-#ifdef __unix__
-#include "/home/amaresh/code/integration/inc/btree.hpp"
-#include "/home/amaresh/code/integration/inc/dp.hpp"
-#else()
-#include "d:/code/integration/inc/btree.hpp"
-#include "d:/code/integration/inc/dp.hpp"
-#endif
-
 
 int main () {
 
