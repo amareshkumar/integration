@@ -28,6 +28,8 @@ or
 Building
 ===================
 
+Note: before proceeding, please check integrationClient.h for path setting of "my_prject_app.h". 
+
 You can build the Visual Studio solution using the following from the "build"
 directory:
 	
