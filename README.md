@@ -10,6 +10,12 @@ Create a subdirectory called "build" and change to it.
 On Windows create a Visual Studio solution by executing:
     
 	cmake -G "Visual Studio 14 2015 Win64" ..
+	cmake -G "Visual Studio 16 2019" -A x64 ../"  (vs 2019)
+	Other options could be: (depending upon architecture and toolset used)
+	cmake -G "Visual Studio 16 2019" -A Win32
+	cmake -G "Visual Studio 16 2019" -A x64
+	cmake -G "Visual Studio 16 2019" -A ARM
+	cmake -G "Visual Studio 16 2019" -A ARM64
 
 On Linux/MacOS create a makefile by executing:
 
