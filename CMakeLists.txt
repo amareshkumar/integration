@@ -20,6 +20,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # The following folder will be included
 include_directories("${PROJECT_SOURCE_DIR}/inc")
+include_directories(""${PROJECT_SOURCE_DIR}/../../external/pthreads")
 
 # get all *.cpp files recursively
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/*.cpp ${PROJECT_SOURCE_DIR}/*.hpp ${PROJECT_SOURCE_DIR}/*.h)
@@ -27,3 +28,6 @@ message("Files to compile: " ${SRC})
 
 #to make cmake generate a static library
 add_library (integrated-static-lib STATIC ${SRC_FILES})
+
+add_custom_target (test_integrated)
+add_dependencies  (test_integrated main_test)
