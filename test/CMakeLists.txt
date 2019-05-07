@@ -15,7 +15,8 @@ set( ENV{gtest_SOURCE_DIR} /home/amaresh/code/integration )    #needs to be chan
 else() 
 set(ENV{gtest_SOURCE_DIR} C:/kamaresh/code/test/)
 endif (UNIX)
-include_directories(${gtest_SOURCE_DIR}/build/googletest-src/googletest/include ${gtest_SOURCE_DIR})
+#include_directories(${gtest_SOURCE_DIR}/build/googletest-src/googletest/include ${gtest_SOURCE_DIR})
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 ##flags to 
 
