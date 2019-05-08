@@ -28,6 +28,9 @@ or
 Building
 ===================
 
+Note 1: before proceeding, please check integrationClient.h for path setting of "my_prject_app.h". 
+Note 2: add an external directory 2 level down and put pthread directory containing all pthread header files and libraries. 
+
 You can build the Visual Studio solution using the following from the "build"
 directory:
 	

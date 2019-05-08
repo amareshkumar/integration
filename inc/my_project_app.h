@@ -55,6 +55,7 @@
 #include "Observer.hpp"
 #include "AbstractFactory.hpp"
 #include "Decorator.hpp"
+#include "bit_manipulation.hpp"
 
 using namespace std;
 
