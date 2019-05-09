@@ -109,19 +109,8 @@ TEST_F(KumarAlgoImplTest, four_sum_1)
 //	EXPECT_DOUBLE_EQ (0, dp.fact(0));
 //	EXPECT_DOUBLE_EQ (120, dp.fact(5));
 
-TEST(calc_test, avg_salary){
-  ASSERT_DOUBLE_EQ(10.0, avg_salary(4));
-}
-
-TEST(triangle_test, area) {
-	Shape *sp = new Triangle (10, 20);
-	ASSERT_DOUBLE_EQ(100.0, sp->get_area());
-
-	delete sp;
-}
-
 int main(int argc, char **argv)
 {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
 }

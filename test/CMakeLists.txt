@@ -54,16 +54,18 @@ include_directories (${CMAKE_CURRENT_BINARY_DIR}/googletest-src/googletest/inclu
 # Unit Tests
 ################################
 # Add test cpp file
-add_executable( test_integrated main_test.cpp )
+add_executable(test_integrated programming_test.cpp main_test.cpp )
+target_compile_options (test_integrated PRIVATE -std=c++11)
+SET(CMAKE_EXE_LINKER_FLAGS  "/FORCE")
 # Link test executable against gtest & gtest_main
 target_link_libraries(test_integrated gtest gtest_main)
-add_test( test_integrated main_test)
+#add_test( test_integrated main_test)
 
 message ("Source files to be compiled: " ${test_integrated})
 
 #add details as main CMakeList need a library named "test"
-add_library(test STATIC main_test.cpp)
-target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+#add_library(test STATIC main_test.cpp)
+#target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 #link integrated-static-lib library
 if (UNIX)
