@@ -109,6 +109,7 @@ TEST(calc_test, avg_salary){
   ASSERT_DOUBLE_EQ(10.0, avg_salary(4));
 }
 
+
 int main(int argc, char **argv)
 {
 	::testing::InitGoogleTest(&argc, argv);
