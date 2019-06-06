@@ -9,6 +9,7 @@ project(test_integrated)
 # GTest
 ################################
 enable_testing()
+
 #set variables
 if (UNIX)
 set( ENV{gtest_SOURCE_DIR} /home/amaresh/code/integration )    #needs to be changed 
@@ -71,3 +72,8 @@ target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/l
 else()
 target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/Debug/integrated-static-lib.lib)
 endif (UNIX)
+
+#add details as main CMakeList need a library named "test"
+add_library(test STATIC main_test.cpp)
+target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
