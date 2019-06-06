@@ -9,10 +9,7 @@ project(test_integrated)
 # GTest
 ################################
 enable_testing()
-<<<<<<< HEAD
 
-=======
->>>>>>> 64274bf... [issue_fixed]: changes to CMakeLists.txt and test/CMakeLists.txt
 #set variables
 if (UNIX)
 set( ENV{gtest_SOURCE_DIR} /home/amaresh/code/integration )    #needs to be changed 
@@ -67,7 +64,7 @@ target_link_libraries(test_integrated gtest gtest_main)
 
 message ("Source files to be compiled: " ${test_integrated})
 
-<<<<<<< HEAD
+
 #add details as main CMakeList need a library named "test"
 #add_library(test STATIC main_test.cpp)
 #target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
@@ -79,18 +76,14 @@ else()
 target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/Debug/integrated-static-lib.lib)
 endif (UNIX)
 
-=======
->>>>>>> 64274bf... [issue_fixed]: changes to CMakeLists.txt and test/CMakeLists.txt
 #add details as main CMakeList need a library named "test"
-add_library(test STATIC main_test.cpp)
-target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+#add_library(test STATIC main_test.cpp)
+#target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-<<<<<<< HEAD
-=======
 #link integrated-static-lib library
 if (UNIX)
 target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/libintegrated-static-lib.a)
 else()
 target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/Debug/integrated-static-lib.lib)
 endif (UNIX)
->>>>>>> 64274bf... [issue_fixed]: changes to CMakeLists.txt and test/CMakeLists.txt
+
