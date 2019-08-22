@@ -105,11 +105,6 @@ TEST_F(KumarAlgoImplTest, four_sum_1)
 	EXPECT_EQ(expected, kumar_algo_impl.fourSum(input, 20));
 }
 
-TEST(calc_test, avg_salary){
-  ASSERT_DOUBLE_EQ(10.0, avg_salary(4));
-}
-
-
 int main(int argc, char **argv)
 {
 	::testing::InitGoogleTest(&argc, argv);
