@@ -104,15 +104,6 @@ TEST_F(KumarAlgoImplTest, four_sum_1)
 	EXPECT_EQ(expected, kumar_algo_impl.fourSum(input, 20));
 }
 
-//TEST(DpFactTest, normal_int) {
-//	Dp dp;
-//	EXPECT_DOUBLE_EQ (0, dp.fact(0));
-//	EXPECT_DOUBLE_EQ (120, dp.fact(5));
-<<<<<<< HEAD
-//}
-=======
->>>>>>> [Google Test] [Clean Up] [FixUp]: added new tests and some cleanup
-
 int main(int argc, char **argv)
 {
 	::testing::InitGoogleTest(&argc, argv);
