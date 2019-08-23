@@ -4,17 +4,16 @@
 
 #include "my_project_app.h"
 
-class C11Class{
+class C11Class
+{
 public:
-	C11Class () = default;
+	C11Class() = default;
 	~C11Class() = default;
 
-	C11Class(const C11Class& cp) {} //ctor
-	C11Class(const C11Class&& mp) {} //move ctor
-	
-	C11Class operator = (const C11Class& op) const {} //copy assign op
-	C11Class operator = (const C11Class&& mv) const {} //move assign op
+	C11Class(const C11Class &cp); //copy ctor
+	C11Class(C11Class &&mp);	  //move ctor
 
-	int no_of_words (const char* sent);
+	C11Class &operator=(const C11Class &op); //copy assign op
+	C11Class &operator=(C11Class &&rhs);	 //move assign op
 };
 #endif
