@@ -1,8 +1,8 @@
 #pragma once
-#include 
+#include <iostream>
+#include <string>
 
 namespace kumar {
 
-
-	int count_if(vector <int> input) {}
-}
+	char* reverse_string(char* str);
+};// namespace kumar
