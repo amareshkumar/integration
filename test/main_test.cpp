@@ -12,6 +12,8 @@
 #include "../inc/Triangle.h"
 #include "../inc/Shape.h"
 #include "../inc/count.h"
+#include "../inc/algorithm.h"
+
 
 #include "../inc/bit_manipulation.hpp"
 
@@ -130,6 +132,12 @@ TEST(kumar, count_float) {
 	vector <double> input{ 2.0, 5.5, 5.0, 1.0, 5.5, 1.3, 1.0 };
 
 	EXPECT_EQ(2, kumar::count(input, 5.5));
+}
+
+TEST(kumar, reverse_string) {
+	char* input = "amaresh";
+
+	EXPECT_STREQ("hserama", kumar::reverse_string(input));
 }
 
 int main(int argc, char** argv)
