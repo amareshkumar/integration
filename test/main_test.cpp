@@ -11,6 +11,7 @@
 #include "../inc/calc.h"
 #include "../inc/Triangle.h"
 #include "../inc/Shape.h"
+#include "../inc/count.h"
 
 #include "../inc/bit_manipulation.hpp"
 
@@ -74,12 +75,16 @@ TEST(KumarAlgoImplTestWithoutFixture, prime_sum)
 	EXPECT_NE(prime_sum2, kumar_algo_impl.prime_sum(20));
 }
 
-TEST_F(KumarAlgoImplTest, is_palindrome)
+TEST_F(KumarAlgoImplTest, is_palindrome_false)
 {
 	//KumarAlgoImpl kumar_algo_impl;
 
 	EXPECT_FALSE(kumar_algo_impl.isPalindrome("aaaabbbbcccc"));
 	EXPECT_FALSE(kumar_algo_impl.isPalindrome("amareshkumar"));
+}
+
+TEST_F(KumarAlgoImplTest, is_palindrome_true)
+{
 	EXPECT_TRUE(kumar_algo_impl.isPalindrome("navan"));
 }
 
@@ -113,6 +118,18 @@ TEST(AlgoNew, count_if) {
 	vector <int> input{ 2, 5, 9, 10, 12, 13, 15 };
 	//find elmemnts which are even
 	EXPECT_EQ(3, std::count_if(begin(input), end(input), [](int i) {return (i % 2) == 0; }));
+}
+
+TEST(kumar, count) {
+	vector <int> input{ 2, 5, 13, 1, 1, 13, 1 };
+
+	EXPECT_EQ(3, kumar::count(input, 1));
+}
+
+TEST(kumar, count_float) {
+	vector <double> input{ 2.0, 5.5, 5.0, 1.0, 5.5, 1.3, 1.0 };
+
+	EXPECT_EQ(2, kumar::count(input, 5.5));
 }
 
 int main(int argc, char** argv)

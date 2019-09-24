@@ -22,6 +22,8 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 include_directories("${PROJECT_SOURCE_DIR}/inc")
 include_directories("${PROJECT_SOURCE_DIR}/../../external/pthreads")
 
+source_group("include"        FILES ${PROJECT_SOURCE_DIR}/inc)
+
 # get all *.cpp files recursively
 #file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/*.cpp ${PROJECT_SOURCE_DIR}/*.hpp ${PROJECT_SOURCE_DIR}/*.h)
 #list(REMOVE_ITEM SRC_FILES "test/main_test.cpp")
