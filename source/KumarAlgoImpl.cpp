@@ -2,15 +2,15 @@
 // check if a string is palindrome using a queue and a stack
 bool KumarAlgoImpl::isPalindrome(const std::string str) {
 
-	for (int i=0; i<str.length(); i++) {
-		pushCharacter (str[i]);
+	for (int i = 0; i < str.length(); i++) {
+		pushCharacter(str[i]);
 		enqueueCharacter(str[i]);
 	}
 
 	bool is_palindrome = true;
 
-	for (int i =0 ; i < str.length() / 2; i++) {
-		if (popCharacter() != dequeueCharacter()){
+	for (int i = 0; i < str.length() / 2; i++) {
+		if (popCharacter() != dequeueCharacter()) {
 			is_palindrome = false;
 
 			break;
@@ -35,7 +35,7 @@ vector<vector<int>> KumarAlgoImpl::fourSum(vector<int>& nums, int target) {
 	for (int i = 0; i < nums.size(); i++) {
 
 		if (sum == nums[i] && count == 4) {
-			result_Vect.push_back (aux_vect);
+			result_Vect.push_back(aux_vect);
 		}
 		else if (sum == nums[i] && count != 4) {
 			aux_vect.erase(aux_vect.begin(), aux_vect.end());
@@ -50,29 +50,29 @@ vector<vector<int>> KumarAlgoImpl::fourSum(vector<int>& nums, int target) {
 	return result_Vect;
 }
 
-bool check_prime (int n) {
+bool check_prime(int n) {
 	if (n == 2) return true;
 
 	//no need to take care less than 2
-	for (int i = 2; i*i <= n; i++) {
-		if (n % i ==0) {
+	for (int i = 2; i * i <= n; i++) {
+		if (n % i == 0) {
 			return false;
 		}
 	}
 	return true;
 }
 
-vector<int> return_prime_sum (vector<int> &prime_v, int sum) {
+vector<int> return_prime_sum(vector<int>& prime_v, int sum) {
 	vector <int> result(2);
 	static int first = 0;
 	static int second = 0;
 
-	for (int i = 0; i < prime_v.size(); i++){
+	for (int i = 0; i < prime_v.size(); i++) {
 		first = prime_v[i];
 		second = 0;
 		bool found = false;
-		for (int j = i+1; j < prime_v.size(); j++){
-			if (prime_v[j] == (sum-first)) {
+		for (int j = i + 1; j < prime_v.size(); j++) {
+			if (prime_v[j] == (sum - first)) {
 				second = prime_v[j];//got first pair
 				found = true;
 				break;
@@ -87,15 +87,15 @@ vector<int> return_prime_sum (vector<int> &prime_v, int sum) {
 	return result;
 }
 
-vector<int> KumarAlgoImpl::prime_sum (int num) {
+vector<int> KumarAlgoImpl::prime_sum(int num) {
 
 	vector<int> prime_list;
 
-	for (int i=2; i < num; i++){
+	for (int i = 2; i < num; i++) {
 		if (check_prime(i)) {
 			prime_list.push_back(i);
 		}
 	}
 
-	return return_prime_sum (prime_list, num);
+	return return_prime_sum(prime_list, num);
 }
