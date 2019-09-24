@@ -14,7 +14,6 @@
 #include "../inc/count.h"
 #include "../inc/algorithm.h"
 
-
 #include "../inc/bit_manipulation.hpp"
 
 //std header files
@@ -139,6 +138,7 @@ TEST(kumar, reverse_string) {
 
 	EXPECT_STREQ("hserama", kumar::reverse_string(input));
 }
+
 
 int main(int argc, char** argv)
 {
