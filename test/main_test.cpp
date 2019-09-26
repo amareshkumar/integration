@@ -12,17 +12,21 @@
 #include "../inc/Triangle.h"
 #include "../inc/Shape.h"
 #include "../inc/count.h"
+<<<<<<< HEAD
 #include "../inc/algo.h"
 
+	====== =
+#include "../inc/algorithm.h"
+	>>>>>> > 86cd0bc3ec819a726e4365adddbda6b751133ad6
 
 #include "../inc/bit_manipulation.hpp"
 
-//std header files
+	//std header files
 #include <functional>
 #include <algorithm>
 #include <exception>
 
-TEST(calc_test, avg_salary)
+	TEST(calc_test, avg_salary)
 {
 	ASSERT_DOUBLE_EQ(10.0, avg_salary(4));
 }
@@ -141,6 +145,7 @@ TEST(kumar, reverse_string) {
 	EXPECT_STREQ("hserama", kumar::reverse_string(input));
 }
 
+
 TEST(cpp_thread, sort_file_wo_mt) {
 	try {
 		kumar::sort_file_in_place("C:\\kamaresh\\code\\test\\input\\sort.txt");
@@ -151,6 +156,7 @@ TEST(cpp_thread, sort_file_wo_mt) {
 
 	EXPECT_TRUE(true);
 }
+
 
 int main(int argc, char** argv)
 {
