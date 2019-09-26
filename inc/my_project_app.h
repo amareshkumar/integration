@@ -56,6 +56,7 @@
 #include "AbstractFactory.hpp"
 #include "Decorator.hpp"
 #include "bit_manipulation.hpp"
+#include "algo.h"
 
 using namespace std;
 
