@@ -7,26 +7,26 @@
 
 #include "gtest/gtest.h"
 
+//std header files
+#include <functional>
+#include <algorithm>
+#include <exception>
+#include <fstream>
+#include <vector>
+#include <thread>
+
 #include "../inc/my_project_app.h"
 #include "../inc/calc.h"
 #include "../inc/Triangle.h"
 #include "../inc/Shape.h"
 #include "../inc/count.h"
-<<<<<<< HEAD
 #include "../inc/algo.h"
-
-	====== =
-#include "../inc/algorithm.h"
-	>>>>>> > 86cd0bc3ec819a726e4365adddbda6b751133ad6
-
 #include "../inc/bit_manipulation.hpp"
 
-	//std header files
-#include <functional>
-#include <algorithm>
-#include <exception>
 
-	TEST(calc_test, avg_salary)
+
+
+TEST(calc_test, avg_salary)
 {
 	ASSERT_DOUBLE_EQ(10.0, avg_salary(4));
 }
@@ -156,6 +156,7 @@ TEST(cpp_thread, sort_file_wo_mt) {
 
 	EXPECT_TRUE(true);
 }
+
 
 
 int main(int argc, char** argv)

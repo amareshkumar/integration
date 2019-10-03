@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD 11)
 if (UNIX)
 set( ENV{CMAKE_SOURCE_DIR} /home/amaresh/code/integration/client )    
 else() 
-set(ENV{CMAKE_SOURCE_DIR} D:/code/integration/client)
+set(ENV{CMAKE_SOURCE_DIR} C:/kamaresh/code/client)
 endif (UNIX)
 
 project(integrationClient)
