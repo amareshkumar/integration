@@ -1,9 +1,10 @@
 ﻿#include "integrationClient.h"
+#include "../inc/algo.h"
 
 
-int main () {
+int main() {
 
-    //commented for direct testing
+	//commented for direct testing
 	//utility::start ();
 
 	//	int arr [] = {15, 10, 100, 5, 13, 90, 80, 50, 10, 5, 3};
@@ -34,13 +35,13 @@ int main () {
 //	MyString mystring;
 //	std::cout << "lenght of last word: " << mystring.lengthOfLastWord("a weirg question about white space");
 //	std::cout << std::endl;
-	
+
 	//Threading practises
 	//threading();
 
 	//function pointers
 	//fn_pointer();
-	
+
 	//Singleton patterns and class practises
 	/*MyLogger& logger = MyLogger::get_instance();
 	logger.log_msg("Hello Singleton");
@@ -52,10 +53,10 @@ int main () {
 	cout << "cube from Derived::cube_int(): " << derived.cube_int(5) << endl;
 
 	Templatized <Int_class, Float_class> templatized;
-	Int_class* intclass = new Int_class(); 
-	Float_class* floatclass = new Float_class(); 
+	Int_class* intclass = new Int_class();
+	Float_class* floatclass = new Float_class();
 
-	cout << "is int class object size is bigger: " 
+	cout << "is int class object size is bigger: "
 		<< templatized.is_bigger_object_size(*intclass, *floatclass) << endl;
 	*/
 	//Queue impl using array
@@ -80,11 +81,11 @@ int main () {
 	queue.enqueue(15);
 	cout << "Queue now is: ";
 	queue.print();*/
-	
+
 	//cout << "CI Practises" << endl;
 
 	//Driver for observer design pattern
-	/*Subject subject; 
+	/*Subject subject;
 	OldConcreteObserver old_observer(&subject, 100);
 	OldConcreteObserver old_observer2(&subject, 200);
 
@@ -107,7 +108,7 @@ int main () {
 
 	//BlackBerryFactory creates a product called Blackberry
 	smartphone = abs_mobile_factory->createSmartphone();
-	
+
 	//use the product : blackberry
 	smartphone->which_smart_phone();
 
@@ -125,15 +126,35 @@ int main () {
 	smartphone = abs_mobile_factory->createSmartphone();
 	smartphone->which_smart_phone();*/
 
-	
-	//Driver code for Decorator design pattern
+
+	////Driver code for Decorator design pattern
 	cout << "Decorator design pattern" << endl;
 
-	IGirl* girl = new GirlWithExpensiveDress(new GirlWithHighHills (new GirlDrivingHarleyBike(new GirlWithNecklace(new GirlMakeUp(new Girl())))));
-	
+	IGirl* girl = new GirlWithExpensiveDress(new GirlWithHighHills(new GirlDrivingHarleyBike(new GirlWithNecklace(new GirlMakeUp(new Girl())))));
+
 	girl->girl_type();
 
 	delete girl;
+
+	/*
+	const char* file = "C:\\kamaresh\\code\\test\\input\\sort.txt";
+	kumar::sort_file_in_place(file);
+
+	const std::string in_file_path("path/to/the/input_file.txt");
+	const std::string out_file_path("path/to/the/output_file.txt");
+
+	std::vector<std::vector<int>> data;
+	if (!read_data(in_file_path, data))   // Read the data
+		return -1;
+
+	sort_data_lines(data);               // Sort the data
+
+	if (!write_data(out_file_path, data)) // Write the sorted data
+		return -2;
+	*/
+
+
+
 }
 
 
