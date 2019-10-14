@@ -127,13 +127,25 @@ int main () {
 
 	
 	//Driver code for Decorator design pattern
-	cout << "Decorator design pattern" << endl;
+	/*cout << "Decorator design pattern" << endl;
 
 	IGirl* girl = new GirlWithExpensiveDress(new GirlWithHighHills (new GirlDrivingHarleyBike(new GirlWithNecklace(new GirlMakeUp(new Girl())))));
 	
 	girl->girl_type();
 
 	delete girl;
+	*/
+	//client code snipped for Bridge design pattern
+	MoveLogic *walklogic = new Walk();
+	MoveLogic *swimLogic = new Swim();
+
+
+	Animal *animal1 = new Person (walklogic);
+	animal1->howDoIMove(); 
+	
+	Animal *animal2 = new Fish (swimLogic);
+	animal2->howDoIMove();
+
 }
 
 
