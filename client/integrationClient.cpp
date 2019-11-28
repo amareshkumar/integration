@@ -24,8 +24,53 @@ public:
 	weak_ptr <one_w> one_wp; 
 };
 
+class B {
+	int idata; 
+public:
+	virtual void display (int i) {
+		cout <<"print int: " << idata << endl;
+	}
+};
+
+class D : public B {
+	protected:
+float fdata; 
+public:
+	virtual void display (float f) {
+		cout  << "print D: float: " << fdata << endl; 
+	}
+};
+
+class DD : public D {
+double ddata; 
+public:
+	void display (float f) {
+		cout  << "print D: float: " << D::fdata << endl; 
+	}
+	void display (double d) {
+		cout  << "print DD: double: " << ddata << endl; 
+	}
+};
 
 int main () {
+
+//#ifdef POLY
+B* obj = new D(); 
+obj->display (2.0);
+obj->display (1);
+
+D* d_obj = new D();
+d_obj->display(2.0);
+d_obj->display (1);
+
+B* dd_obj = new DD();
+dd_obj->display(5);
+dd_obj->display(4.5f);
+dd_obj->display(12345l);
+
+delete obj; delete d_obj; delete dd_obj;
+
+//#endif // POLY
 
     //commented for direct testing
 	//utility::start ();
@@ -177,6 +222,8 @@ int main () {
 	auto animal3 = new Person(walklogic2);
 	animal3->howDoIMove();
 
+#ifdef WHY_UNIQUE_POINTER
+
 	// cout << "using shared ptr: ";
 	// shared_ptr <MoveLogic> walklogic3 = make_shared <MoveLogic> ();
 	// shared_ptr<Animal> animal4 = make_shared <Person> (walklogic3);
@@ -215,6 +262,9 @@ int main () {
 	// When 'x' leaves the scope, its ref count will drop to 0.
 	// While destroying it, ref count of 'x->b' will drop to 0.
 	// So both A and B will be deallocated.
+#endif //WHY_UNIQUE_POINTER
+
+
 }
 
 
