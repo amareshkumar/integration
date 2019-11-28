@@ -1,7 +1,76 @@
 ﻿#include "integrationClient.h"
 
+//existing cycle
+class two;
+class one {
+public:
+	shared_ptr <two> two_sp; 
+};
+
+class two {
+public:
+	shared_ptr <one> one_sp; 
+};
+
+class two_w;
+//weak pointer: breaking know cycle
+class one_w {
+public:
+	shared_ptr <two_w> two_sp; 
+};
+
+class two_w {
+public:
+	weak_ptr <one_w> one_wp; 
+};
+
+class B {
+	int idata; 
+public:
+	virtual void display (int i) {
+		cout <<"print int: " << idata << endl;
+	}
+};
+
+class D : public B {
+	protected:
+float fdata; 
+public:
+	virtual void display (float f) {
+		cout  << "print D: float: " << fdata << endl; 
+	}
+};
+
+class DD : public D {
+double ddata; 
+public:
+	void display (float f) {
+		cout  << "print D: float: " << D::fdata << endl; 
+	}
+	void display (double d) {
+		cout  << "print DD: double: " << ddata << endl; 
+	}
+};
 
 int main () {
+
+//#ifdef POLY
+B* obj = new D(); 
+obj->display (2.0);
+obj->display (1);
+
+D* d_obj = new D();
+d_obj->display(2.0);
+d_obj->display (1);
+
+B* dd_obj = new DD();
+dd_obj->display(5);
+dd_obj->display(4.5f);
+dd_obj->display(12345l);
+
+delete obj; delete d_obj; delete dd_obj;
+
+//#endif // POLY
 
     //commented for direct testing
 	//utility::start ();
@@ -127,13 +196,75 @@ int main () {
 
 	
 	//Driver code for Decorator design pattern
-	cout << "Decorator design pattern" << endl;
+	/*cout << "Decorator design pattern" << endl;
 
 	IGirl* girl = new GirlWithExpensiveDress(new GirlWithHighHills (new GirlDrivingHarleyBike(new GirlWithNecklace(new GirlMakeUp(new Girl())))));
 	
 	girl->girl_type();
 
 	delete girl;
+	*/
+	//client code snipped for Bridge design pattern
+	MoveLogic *walklogic = new Walk();
+	MoveLogic *swimLogic = new Swim();
+
+
+	Animal *animal1 = new Person (walklogic);
+	animal1->howDoIMove(); 
+	
+	Animal *animal2 = new Fish (swimLogic);
+	animal2->howDoIMove();
+
+	//doing same above things with smart pointers
+	cout << "using smart auto keyword | dumb pointers: ";
+	auto walklogic2 = new Walk();
+
+	auto animal3 = new Person(walklogic2);
+	animal3->howDoIMove();
+
+#ifdef WHY_UNIQUE_POINTER
+
+	// cout << "using shared ptr: ";
+	// shared_ptr <MoveLogic> walklogic3 = make_shared <MoveLogic> ();
+	// shared_ptr<Animal> animal4 = make_shared <Person> (walklogic3);
+	// animal4->howDoIMove();
+
+	// unique_ptr <MoveLogic> movelogic_sp = make_unique <MoveLogic> ();
+	// unique_ptr <Animal> animal_sp = make_unique <Fish> (movelogic_sp);
+	// animal_sp->howDoIMove();
+
+	cout << "cycling pointers | shared ptr | memory leak" << endl;
+	shared_ptr <one> x (make_shared <one>()); //+1
+	cout << "x-ref_count: " << x.use_count() << endl;
+	x->two_sp = make_shared <two>(); //+1
+	x->two_sp->one_sp = x; //+1
+	cout << "x-ref_count: " << x.use_count() << endl;
+
+
+	// Ref count of 'x' is 2.
+	// Ref count of 'x->b' is 1.
+	// When 'x' leaves the scope, there will be a memory leak:
+	// 2 is decremented to 1, and so both ref counts will be 1.
+	// (Memory is deallocated only when ref count drops to 0)
+
+
+	cout << "after using weak_ptr: " <<endl;
+	//breaking the cycle with wp
+	shared_ptr<one_w> x2(make_shared <one_w>()); // +1
+	cout << "x-ref_count: " << x2.use_count() << endl;
+	x2->two_sp = make_unique <two_w>();           // +1
+	cout << "x-ref_count: " << x2.use_count() << endl;
+	x2->two_sp->one_wp = x2;            // No +1 here
+	//cout << "x-ref_count: " << x2.use_count << endl;
+
+	// Ref count of 'x' is 1.
+	// Ref count of 'x->b' is 1.
+	// When 'x' leaves the scope, its ref count will drop to 0.
+	// While destroying it, ref count of 'x->b' will drop to 0.
+	// So both A and B will be deallocated.
+#endif //WHY_UNIQUE_POINTER
+
+
 }
 
 
