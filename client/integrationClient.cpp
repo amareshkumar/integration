@@ -5,20 +5,19 @@ using namespace std;
 
 #ifdef PLAYGROUND
 
-class Base {
+class Base1 {
 public:
-	virtual void showname() {
+	virtual inline void showname() {
 		cout << "Base::showname()" << endl;
 	}
 };
 
-class Derived : public Base {
+class Derived1 : public Base1 {
 public:
 	void showname() {
 		cout << "Derived::showname()" << endl;
 	}
 };
-
 
 #endif //PLAYGROUND
 
@@ -26,9 +25,11 @@ public:
 int main() {
 
 #ifdef PLAYGROUND
-	Base base;
-	base.showname();
+	Base1 base1;
+	base1.showname();
 
+	Base1* base2 = new Derived1();
+	base2->showname();
 
 #endif //PLAYGROUND
 
