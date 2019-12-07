@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 11)
 
 #set variables
 if (UNIX)
-set( ENV{CMAKE_SOURCE_DIR} /home/amaresh/code/integration )    #needs to be changed 
+set( ENV{CMAKE_SOURCE_DIR} /home/code/integration )    #needs to be changed 
 else() 
-set(ENV{CMAKE_SOURCE_DIR} C:/kamaresh/code/integration)
+set(ENV{CMAKE_SOURCE_DIR} D:/code/integration)
 endif (UNIX)
 
 project(integrated)
