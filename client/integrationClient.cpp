@@ -1,7 +1,36 @@
 ﻿#include "integrationClient.h"
 
 
+using namespace std;
+
+#ifdef PLAYGROUND
+
+class Base {
+public:
+	virtual void showname() {
+		cout << "Base::showname()" << endl;
+	}
+};
+
+class Derived : public Base {
+public:
+	void showname() {
+		cout << "Derived::showname()" << endl;
+	}
+};
+
+
+#endif //PLAYGROUND
+
+
 int main() {
+
+#ifdef PLAYGROUND
+	Base base;
+	base.showname();
+
+
+#endif //PLAYGROUND
 
 #ifdef UTILITY_START
 	//commented for direct testing
