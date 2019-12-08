@@ -1,6 +1,5 @@
 ﻿#include "integrationClient.h"
 
-
 using namespace std;
 
 #ifdef PLAYGROUND
@@ -35,8 +34,54 @@ void another1() {
 	cout << "another1" << endl;
 }
 
-void fn_pointer() {
+#endif //FUNCTION_PTR
 
+
+int main() {
+
+#ifdef MODERN
+	//cout << "copy: " << endl;
+	Movable move1;
+	
+	//cout << "(before copy) for move1:: ";
+	//move1.details();
+
+	Movable move2;
+	cout << "assigning lvalue: " << endl;
+	move2 = move1;
+	cout << "end of assigning l-value" << endl;
+	
+	//cout << "\n(after copy) move1:: ";
+	//move1.details();
+	//cout << "\n(after copy) move2:: ";
+	//move2.details();
+
+	//Movable move3;
+	//move3 = move2; 
+	//cout << "\n(after assignment) move3: " ;
+	//move3.details();
+	//cout << "assigning r-value" << endl;
+	//Movable move4 = Movable();
+	//cout << "end of assigning r-value" << endl;
+	//cout << "\n(after copying) move4: ";
+	//move4.details();
+
+	//cout << "invoking move semantic" << endl;
+
+	//Movable move5 = std::move(move4);
+	//cout << "\n(move assignment) move5: ";
+	//move5.details();
+	//cout << "\n(after move constructor) move4: ";
+	//move4.details();
+
+	//Movable move6;
+	//move6 = std::move (Movable());
+	//cout << "\n (after move assignment): ";
+	//move6.details();
+
+#endif //MODERN
+
+#ifdef FUNCTION_PTR
 	cout << "Direct call: " << endl;
 	func1();
 
@@ -56,12 +101,7 @@ void fn_pointer() {
 	cout << "another using fp2" << endl;
 	int(*pf2)(int, int) = &simple_sum;
 	cout << "sum " << (*pf2)(3, 2) << endl;
-}
-
 #endif //FUNCTION_PTR
-
-
-int main() {
 
 #ifdef PLAYGROUND
 	Base1 base1;
@@ -226,7 +266,6 @@ int main() {
 
 	delete girl;
 #endif //DECORATOR
-
 
 }
 
