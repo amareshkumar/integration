@@ -1,3 +1,5 @@
+/*Header only implementation*/
+
 #ifndef OBSERVER_HPP
 #define OBSERVER_HPP
 
