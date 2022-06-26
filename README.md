@@ -10,7 +10,7 @@ Create a subdirectory called "build" and change to it.
 On Windows create a Visual Studio solution by executing:
     
 	cmake -G "Visual Studio 14 2015 Win64" ..
-	cmake -G "Visual Studio 16 2019" -A x64 ../"  (vs 2019)
+	cmake -G "Visual Studio 16 2019" -A x64 ../  (vs 2019)
 	Other options could be: (depending upon architecture and toolset used)
 	cmake -G "Visual Studio 16 2019" -A Win32
 	cmake -G "Visual Studio 16 2019" -A x64
@@ -44,6 +44,10 @@ client application:
 or
 
     devenv integrated.sln /build RelWithDebInfo
+    
+test_integrated (google test):
+
+	devenv test_integrated.sln /build Debug
 
 The output will be in the build\Debug or build\RelWithDebInfo subdirectory.
 
