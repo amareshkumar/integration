@@ -1,5 +1,5 @@
 Project: integration
-This is a sole purpose project for self-practices for some C++ concepts and algo/ds implementations.
+This is a sole purpose project for self-practices for some modern C++ concepts and algo/ds implementations.
 
 Generating build script
 =======================
@@ -16,6 +16,7 @@ On Windows create a Visual Studio solution by executing:
 	cmake -G "Visual Studio 16 2019" -A x64
 	cmake -G "Visual Studio 16 2019" -A ARM
 	cmake -G "Visual Studio 16 2019" -A ARM64
+	cmake -G "Visual Studio 17 2022" -A x64
 
 On Linux/MacOS create a makefile by executing:
 

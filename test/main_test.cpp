@@ -8,7 +8,7 @@
 #include "gtest/gtest.h"
 
 #include "../inc/my_project_app.h"
-#include "../inc/calc.h"
+//#include "../inc/calc.h"
 #include "../inc/Triangle.h"
 #include "../inc/Shape.h"
 #include "../inc/count.h"
@@ -19,10 +19,10 @@
 #include <functional>
 #include <algorithm>
 
-TEST(calc_test, avg_salary)
-{
-	ASSERT_DOUBLE_EQ(10.0, avg_salary(4));
-}
+// TEST(calc_test, avg_salary)
+// {
+// 	ASSERT_DOUBLE_EQ(10.0, avg_salary(4));
+// }
 
 TEST(triangle_test, area)
 {

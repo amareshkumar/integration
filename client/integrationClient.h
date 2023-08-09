@@ -6,7 +6,7 @@
 #ifdef __unix__
 #include "/home/amaresh/code/integration/inc/my_project_app.h"
 #else()
-#include "d:/code/integration/inc/my_project_app.h"
+#include "C:/Users/amare/code/integration/inc/my_project_app.h"
 #endif
 
 #endif //INTEGRATIONCLIENT_H_

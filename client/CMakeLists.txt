@@ -4,7 +4,7 @@
 # 
 
 # Specify the minimum version for CMake
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.12)
 
 # Enable C++11 standard
 set(CMAKE_CXX_STANDARD 11)  
@@ -24,7 +24,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 #add_executable(integrated ${SRC_FILES})
-add_executable(integrationClient integrationClient.cpp)
+add_executable(integrationClient smart_pointers.cpp)
 if (UNIX)
 target_link_libraries(integrationClient ${PROJECT_SOURCE_DIR}/../build/bin/libintegrated-static-lib.a)
 else()
