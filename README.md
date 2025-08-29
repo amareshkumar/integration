@@ -1,5 +1,7 @@
 Project: integration
-This is a sole purpose project for self-practices for some C++ concepts and algo/ds implementations.
+This is a integration project where a small working web page, a middle layer and a low level calculation engine has been implemented.
+
+In this 3 layered system, an user can select from web page about certain functionality like playing a game, interaction with some core concepts in modern C++ and even more... 
 
 Generating build script
 =======================
