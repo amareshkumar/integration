@@ -55,6 +55,7 @@
 #include "AbstractFactory.hpp"
 #include "Decorator.hpp"
 #include "bit_manipulation.hpp"
+#include "Modern.hpp"
 
 using namespace std;
 
