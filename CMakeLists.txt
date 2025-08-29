@@ -1,14 +1,14 @@
 # Specify the minimum version for CMake
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 
-# Enable C++11 standard
-set(CMAKE_CXX_STANDARD 11)  
+# Enable C++17 standard
+set(CMAKE_CXX_STANDARD 17)  
 
 #set variables
 if (UNIX)
 set( ENV{CMAKE_SOURCE_DIR} /home/code/integration )    #needs to be changed 
 else() 
-set(ENV{CMAKE_SOURCE_DIR} D:/code/integration)
+set(ENV{CMAKE_SOURCE_DIR} C:/code/integration)
 endif (UNIX)
 
 project(integrated)
@@ -17,10 +17,11 @@ project(integrated)
 set(CMAKE_BINARY_DIR ${CMAKE_BINARY_DIR}/bin)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # The following folder will be included
 include_directories("${PROJECT_SOURCE_DIR}/inc")
-include_directories("${PROJECT_SOURCE_DIR}/../../external/pthreads")
+
 
 source_group("include"        FILES ${PROJECT_SOURCE_DIR}/inc)
 

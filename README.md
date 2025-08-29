@@ -16,6 +16,7 @@ On Windows create a Visual Studio solution by executing:
 	cmake -G "Visual Studio 16 2019" -A x64
 	cmake -G "Visual Studio 16 2019" -A ARM
 	cmake -G "Visual Studio 16 2019" -A ARM64
+	cmake -G "Visual Studio 17 2022" -A x64 ../ (vs 2022)
 
 On Linux/MacOS create a makefile by executing:
 
