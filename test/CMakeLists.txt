@@ -2,7 +2,11 @@
 # Create by: Amaresh Kumar
 # Last modified on April 27th 2019
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.2)
+
+# Enable C++17 standard
+set(CMAKE_CXX_STANDARD 17)  
+
 project(test_integrated)
 
 ################################
@@ -14,7 +18,7 @@ enable_testing()
 if (UNIX)
 set( ENV{gtest_SOURCE_DIR} /home/amaresh/code/integration )    #needs to be changed 
 else() 
-set(ENV{gtest_SOURCE_DIR} C:/kamaresh/code/test/)
+set(ENV{gtest_SOURCE_DIR} C:/code/integration/test/)
 endif (UNIX)
 include_directories(${gtest_SOURCE_DIR}/build/googletest-src/googletest/include ${gtest_SOURCE_DIR})
 
@@ -55,7 +59,7 @@ include_directories (${CMAKE_CURRENT_BINARY_DIR}/googletest-src/googletest/inclu
 # Unit Tests
 ################################
 # Add test cpp file
-add_executable(test_integrated programming_test.cpp main_test.cpp )
+add_executable(test_integrated main_test.cpp )
 target_compile_options (test_integrated PRIVATE -std=c++11)
 SET(CMAKE_EXE_LINKER_FLAGS  "/FORCE")
 # Link test executable against gtest & gtest_main
@@ -69,6 +73,8 @@ message ("Source files to be compiled: " ${test_integrated})
 #add_library(test STATIC main_test.cpp)
 #target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
+#[===[
+
 #link integrated-static-lib library
 if (UNIX)
 target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/libintegrated-static-lib.a)
@@ -86,4 +92,4 @@ target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/l
 else()
 target_link_libraries(test_integrated ${CMAKE_CURRENT_SOURCE_DIR}/../build/bin/Debug/integrated-static-lib.lib)
 endif (UNIX)
-
+#]===]

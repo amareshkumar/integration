@@ -12,12 +12,12 @@
 
 class Rectangle: public Quad {
 public:
-	Rectangle(int len=0, int br=0);
+	Rectangle(int len = 0, int br = 0) {
+	}
 	virtual ~Rectangle();
 
-	double get_area (){
-
-		return len * br;
+	inline double get_area () override{
+		return base * length;
 	}
 
 	double get_perimeter () {
