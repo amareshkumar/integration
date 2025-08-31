@@ -15,21 +15,29 @@ using namespace std;
 
 class Triangle: public Shape {
 public:
-	Triangle(int base, int height, int side1=0, int side2=0, int side3=0);
-	virtual ~Triangle();
+	Triangle(int base, int height) : base(base), height (height) {
+		//cout << "Triangle constructor called. " << endl;
+	}
 
-	double get_area() override { return base * height; }
+
+	inline double get_area() override { 
+		return base * height; 
+	}
 	
-	double get_perimeter ();
+	inline double get_perimeter()override {
+		return 0.0f;
+	}
 	
-	string tri_name()const {
+	string tri_name() const {
 		return tname;
 	}
 
+	virtual ~Triangle() {
+		//cout << "Triangle destructor called. " << endl;
+	}
 private:
 	int base{0};
 	int height{0};
-	int side1, side2, side3;
 	const string tname = "Scalene. ";
 };
 

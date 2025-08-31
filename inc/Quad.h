@@ -18,7 +18,8 @@ using namespace std;
 class Quad : public Shape {
 
 public:
-	Quad ():quad_type_name(string name) : name (string("Quadrilaterals")) {
+	Quad() = default;
+	Quad (string name) : quad_type_name(name) {
 	}
 
 	string get_quad_tyte (){

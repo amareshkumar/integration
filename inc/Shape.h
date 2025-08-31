@@ -20,9 +20,6 @@ using namespace std;
 
 class Shape {
 public:
-	Shape (){
-	}
-
 	virtual double get_area () = 0;
 	virtual double get_perimeter() = 0;
 

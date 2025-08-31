@@ -4,5 +4,7 @@
 
 namespace kumar {
 	template <typename T>
-	int count(std::vector <T> input, T value);
+	int count(std::vector <T> input, T value) {
+		return std::count(input.begin(), input.end(), value);
+	}
 };
