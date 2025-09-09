@@ -7,6 +7,9 @@ cmake_minimum_required(VERSION 3.2)
 # Enable C++17 standard
 set(CMAKE_CXX_STANDARD 17)  
 
+# enable address sanitizer
+add_compile_options(-fsanitize=address)
+
 project(test_integrated)
 
 ################################
